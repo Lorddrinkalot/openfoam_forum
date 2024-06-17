@@ -1,0 +1,40 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+
+patches
+(
+	{
+		name zone1;
+	
+		patchInfo
+		{
+			type faceZone;
+			faces
+			(
+			(5 23 24 6)  // Flächendefinition für Zone 1	
+			);
+		}
+		constructFrom patches;
+		
+		patches (periodic1);
+	
+	}
+	// Weitere FaceZone-Definitionen hier ...
+);		
+
+pointSync false;

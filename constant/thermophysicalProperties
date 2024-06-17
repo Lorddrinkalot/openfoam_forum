@@ -1,0 +1,65 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2212                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+thermoType
+{
+    type            heRhoThermo;  //heRhoThermo
+    mixture         pureMixture;
+    transport       const;
+    thermo          hConst;  //hConst
+    equationOfState Boussinesq;
+    specie          specie;
+    energy          sensibleEnthalpy;  //sensibleEnthalpy
+}
+
+pRef            0;
+dpdt off;
+
+
+
+mixture
+{
+    specie
+    {
+        molWeight       508;
+    }
+    thermodynamics                                                             
+    {                                                                          
+        Cp    			188.64;  
+        Sf   			0;                                                     
+        Hf   			0;                                                     
+    }
+
+    equationOfState                                                            
+    {                                                                          
+        rho0			9689;  
+		T0				573;
+		beta			1.22896e-04;
+    }
+    
+    transport                                                                  
+    {                                                                          
+        mu     			1.821e-3; 
+        kappa  			22.85;   
+		Pr  			0.015;
+    }
+}
+
+
+// ************************************************************************* //
+
+
+// ************************************************************************* //
+
